@@ -12,24 +12,24 @@ namespace Schulung_Umgebung
         
           private readonly string _filePath;
 
-        public CSVImport(string filePath) //Konstruktor mit Übergabeparameter dadurch können wir uns eine Parameterübergabe bei der ReadCsv() Methode sparen. Alternativ kann der Konstrukto gelöscht werden und die ReadCsv hält den filePath. Für erweiterungen wie zum Beispiel WriteCsv ist dieser Weg zu bevorzugen (DRY Prinzip)
+        public CSVImport(string filePath) //Constructor with passing parameters, this way we can save passing parameters in the ReadCsv() method. Alternatively, the constructor can be deleted, and ReadCsv can hold the filePath. This approach is preferred for extensions, such as WriteCsv, following the DRY principle (Don't Repeat Yourself).
         {
             _filePath = filePath;
         }
 
-        public List<string[]> ReadCsv() //Alternativ kann hier der filePath als Parameter übergeben werden. Siehe Zeile 15
+        public List<string[]> ReadCsv() //Alternatively, the filePath can be passed as a parameter here. See line 15.
         {
             var rows = new List<string[]>();
 
             if (!File.Exists(_filePath))
-                throw new FileNotFoundException("CSV file not found."); //Sollte die File nicht existieren ! = (Not) so wird eine Exception geworfen um den Crash des Programmes zu verhindern
+                throw new FileNotFoundException("CSV file not found."); //If the file does not exist (!= 'Not'), an exception is thrown to prevent the program from crashing.
 
             try
             {
                 foreach (string line in File.ReadLines(_filePath)) 
                 {
                    
-                    string[] fields = line.Split(','); //Hier kann der char geändert werden um den Delimiter anzupassen
+                    string[] fields = line.Split(','); //Here, the character can be changed to adjust the delimiter.
                     rows.Add(fields);
                 }
 
@@ -39,7 +39,7 @@ namespace Schulung_Umgebung
                 for (int i = 0; i < lines.Length; i++)
                 {
                     string line = lines[i];
-                    string[] fields = line.Split(','); // Hier kann der char geändert werden um den Delimiter anzupassen
+                    string[] fields = line.Split(','); // Here, the character can be changed to adjust the delimiter.
                     rows.Add(fields); 
                 } */
             }
