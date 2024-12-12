@@ -7,7 +7,7 @@ class Program
     {
         // Step 1: Create CSV-File and populate it with values
         string csvFile = "example.csv";
-        File.WriteAllText(csvFile, "Name,Age,City\nJohn,25,New York\nAlice,30,Los Angeles\nBob,22,Chicago");
+        File.WriteAllText(csvFile, "Name,Age,City\nLucas,25,Sankt Margrethen\nThomas,55,Vaduz \nAlois,60,Schaan");
 
         Console.WriteLine($"CSV-Datei '{csvFile}' wurde erstellt.\n");
 

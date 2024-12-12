@@ -14,7 +14,7 @@ namespace _1_Variablen
             Console.WriteLine($"Alter: {age}");
 
             // 3. Declaration of a string-variable
-            string name = "Lucas"; // Textliche Variable
+            string name = "Lucas"; // Text Variable
             Console.WriteLine($"Name: {name}");
 
             // 4. Declaration of a constant
@@ -87,7 +87,7 @@ namespace _1_Variablen
             Console.WriteLine($"Preis (2 Dezimalstellen): {price:F2}");
             Console.WriteLine($"Preis (Währung): {price:C}");
 
-            // b) Numbers with thoZahlen mit thousands delimiter
+            // b) Numbers with thousands delimiter
             int largeNumber = 1000000;
             Console.WriteLine($"Große Zahl mit Tausendertrennzeichen: {largeNumber:N0}");
 
