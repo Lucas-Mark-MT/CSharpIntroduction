@@ -4,6 +4,8 @@
     {
         static void Main(string[] args)
         {
+          
+            
             // 1. Creation and initialisation of an array
             int[] numbers = { 10, 20, 30, 40, 50 };
             Console.WriteLine("1. Ursprüngliches Array:");
@@ -62,6 +64,14 @@
             // 9. Array-length
             Console.WriteLine("\n9. Länge des Arrays:");
             Console.WriteLine($"Das Array enthält {numbers.Length} Elemente.");
+
+            var intarr = new int[5];
+            const int BufferSize = 5;
+            for (int index = 0; index % BufferSize <= BufferSize; index += 1)
+            {
+                intarr[index % BufferSize] = 0;
+                Console.WriteLine(index % BufferSize);
+            }
         }
 
         // Helpermethod to print arrays 
@@ -69,6 +79,8 @@
         {
             Console.WriteLine("[ " + string.Join(", ", array) + " ]");
         }
+
+        
     }
 }
 
