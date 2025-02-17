@@ -2,10 +2,10 @@
 {
     internal class Program
     {
-        // 1. Enum-Deklaration
+        // 1. Enum Declaration
         enum DayOfWeek
         {
-            Monday,    // Standardmäßig startet der Wert bei 0
+            Monday,    // By default, values start at 0
             Tuesday,   // 1
             Wednesday, // 2
             Thursday,  // 3
@@ -16,57 +16,55 @@
 
         enum OrderStatus
         {
-            Pending = 1,   // Manuelle Zuweisung eines Werts
+            Pending = 1,   // Manually assigned values
             Shipped = 2,
             Delivered = 3,
             Cancelled = 4
         }
 
-
-
         static void Main(string[] args)
         {
-            // 2. Verwendung von Enums
-            Console.WriteLine("1. Enum-Wert ausgeben:");
+            // 2. Using Enums
+            Console.WriteLine("1. Displaying an Enum value:");
             DayOfWeek today = DayOfWeek.Friday;
-            Console.WriteLine($"Heute ist: {today}");
+            Console.WriteLine($"Today is: {today}");
 
-            // 3. Enum-Wert in Ganzzahl konvertieren
-            Console.WriteLine("\n2. Enum-Wert als Ganzzahl:");
+            // 3. Convert Enum to Integer
+            Console.WriteLine("\n2. Enum value as an Integer:");
             int numericValue = (int)today;
-            Console.WriteLine($"Der numerische Wert von {today} ist: {numericValue}");
+            Console.WriteLine($"The numeric value of {today} is: {numericValue}");
 
-            // 4. Enum-Wert aus Ganzzahl zurückkonvertieren
-            Console.WriteLine("\n3. Ganzzahl in Enum-Wert umwandeln:");
+            // 4. Convert Integer back to Enum
+            Console.WriteLine("\n3. Converting an Integer to Enum:");
             DayOfWeek convertedDay = (DayOfWeek)4;
-            Console.WriteLine($"Die Ganzzahl 4 entspricht: {convertedDay}");
+            Console.WriteLine($"The integer 4 corresponds to: {convertedDay}");
 
-            // 5. Iteration über Enum-Werte
-            Console.WriteLine("\n4. Iteration über alle Enum-Werte:");
+            // 5. Iterating over Enum values
+            Console.WriteLine("\n4. Iterating through all Enum values:");
             foreach (DayOfWeek day in Enum.GetValues(typeof(DayOfWeek)))
             {
-                Console.WriteLine($"Tag: {day} (Numerischer Wert: {(int)day})");
+                Console.WriteLine($"Day: {day} (Numeric Value: {(int)day})");
             }
 
-            // 6. Enum mit benutzerdefinierten Werten
-            Console.WriteLine("\n5. Enum mit benutzerdefinierten Werten:");
+            // 6. Enum with Custom Values
+            Console.WriteLine("\n5. Enum with Custom Values:");
             OrderStatus status = OrderStatus.Shipped;
-            Console.WriteLine($"Der Bestellstatus ist: {status} (Numerischer Wert: {(int)status})");
+            Console.WriteLine($"The order status is: {status} (Numeric Value: {(int)status})");
 
-            // 7. Enum-Wert als Zeichenkette konvertieren
-            Console.WriteLine("\n6. Enum-Wert in Zeichenkette konvertieren:");
+            // 7. Convert Enum to String
+            Console.WriteLine("\n6. Converting Enum Value to String:");
             string statusString = status.ToString();
-            Console.WriteLine($"Der Status als Zeichenkette: {statusString}");
+            Console.WriteLine($"The status as a string: {statusString}");
 
-            // 8. Zeichenkette in Enum-Wert umwandeln
-            Console.WriteLine("\n7. Zeichenkette in Enum-Wert umwandeln:");
+            // 8. Convert String to Enum
+            Console.WriteLine("\n7. Converting String to Enum:");
             if (Enum.TryParse("Delivered", out OrderStatus parsedStatus))
             {
-                Console.WriteLine($"'Delivered' wurde in den Enum-Wert konvertiert: {parsedStatus}");
+                Console.WriteLine($"'Delivered' has been converted to the Enum value: {parsedStatus}");
             }
             else
             {
-                Console.WriteLine("Konvertierung fehlgeschlagen.");
+                Console.WriteLine("Conversion failed.");
             }
         }
     }

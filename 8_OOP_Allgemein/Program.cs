@@ -1,84 +1,82 @@
 ﻿namespace _8_OOP_Allgemein
 {
-   // 1. Basisklasse
+    // 1. Base class
     class Animal
     {
-        // Eigenschaften (Properties)
+        // Properties
         public string Name { get; set; }
         public int Age { get; set; }
 
-        // Konstruktor
+        // Constructor
         public Animal(string name, int age)
         {
             Name = name;
             Age = age;
         }
 
-        // Methode
+        // Method
         public virtual void Speak()
         {
-            Console.WriteLine($"{Name} macht ein Geräusch.");
+            Console.WriteLine($"{Name} makes a noise.");
         }
 
-        // Überschreiben der ToString-Methode
+        // Overriding the ToString method
         public override string ToString()
         {
-            return $"[Name: {Name}, Alter: {Age}]";
+            return $"[Name: {Name}, Age: {Age}]";
         }
     }
 
-    // 2. Abgeleitete Klasse (Vererbung)
+    // 2. Derived class (Inheritance)
     class Dog : Animal
     {
-        // Zusätzliche Eigenschaft
+        // Additional property
         public string Breed { get; set; }
 
-        // Konstruktor
+        // Constructor
         public Dog(string name, int age, string breed) : base(name, age)
         {
             Breed = breed;
         }
 
-        // Überschreiben der Speak-Methode
+        // Overriding the Speak method
         public override void Speak()
         {
-            Console.WriteLine($"{Name} bellt: Wuff Wuff!");
+            Console.WriteLine($"{Name} barks: Woof Woof!");
         }
 
-        // Methode für zusätzliche Funktionalität
+        // Method for additional functionality
         public void Fetch()
         {
-            Console.WriteLine($"{Name} bringt den Ball zurück!");
+            Console.WriteLine($"{Name} brings the ball back!");
         }
     }
 
-    // 3. Hauptprogramm
+    // 3. Main program
     class Program
     {
         static void Main(string[] args)
         {
-            // Erstellen eines Animal-Objekts
-            Animal genericAnimal = new Animal("Tier", 3);
-            Console.WriteLine("1. Ein generisches Tier:");
+            // Creating an Animal object
+            Animal genericAnimal = new Animal("Animal", 3);
+            Console.WriteLine("1. A generic animal:");
             Console.WriteLine(genericAnimal);
             genericAnimal.Speak();
 
-            // Erstellen eines Dog-Objekts
+            // Creating a Dog object
             Dog buddy = new Dog("Buddy", 5, "Golden Retriever");
-            Console.WriteLine("\n2. Ein spezieller Hund:");
+            Console.WriteLine("\n2. A specific dog:");
             Console.WriteLine(buddy);
             buddy.Speak();
 
-            // Zusätzliche Funktionalität der abgeleiteten Klasse
-            Console.WriteLine("\n3. Buddy führt einen Trick aus:");
+            // Additional functionality of the derived class
+            Console.WriteLine("\n3. Buddy performs a trick:");
             buddy.Fetch();
 
-            // Polymorphismus (Animal-Referenz auf Dog-Objekt)
+            // Polymorphism (Animal reference to a Dog object)
             Animal polymorphicDog = new Dog("Max", 2, "Beagle");
-            Console.WriteLine("\n4. Polymorphismus in Aktion:");
-            polymorphicDog.Speak(); // Ruft die Überschreibung in der Dog-Klasse auf
+            Console.WriteLine("\n4. Polymorphism in action:");
+            polymorphicDog.Speak(); // Calls the overridden method in the Dog class
         }
     }
 }
-
-

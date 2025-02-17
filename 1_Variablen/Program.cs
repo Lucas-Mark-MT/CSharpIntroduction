@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace _1_Variablen
+namespace _1_Variables
 {
     internal class Program
     {
@@ -11,101 +11,101 @@ namespace _1_Variablen
 
             // 2. Declaration of a normal variable
             int age = 25; // whole-number variable
-            Console.WriteLine($"Alter: {age}");
+            Console.WriteLine($"Age: {age}");
 
-            // 3. Declaration of a string-variable
-            string name = "Lucas"; // Text Variable
+            // 3. Declaration of a string variable
+            string name = "Lucas"; // Text variable
             Console.WriteLine($"Name: {name}");
 
             // 4. Declaration of a constant
             const double pi = 3.14159; // constants are fixed and not changeable
             Console.WriteLine($"Pi: {pi}");
 
-            // 5. Nullable variable (mit ?)
+            // 5. Nullable variable (with ?)
             int? nullableAge = null; // Nullable int (can be null)
-            Console.WriteLine($"Nullable Alter: {(nullableAge.HasValue ? nullableAge.Value.ToString() : "unbekannt")}");
+            Console.WriteLine($"Nullable Age: {(nullableAge.HasValue ? nullableAge.Value.ToString() : "unknown")}");
 
             // Assignment of a value to nullableAge
             nullableAge = 24;
-            Console.WriteLine($"Nullable Alter mit Wert: {nullableAge}");
+            Console.WriteLine($"Nullable Age with value: {nullableAge}");
 
-            // 6. Boolean-variable
-            bool isStudent = false; // Truth-conditional-value (true/false)
-            Console.WriteLine($"Ist Student: {isStudent}");
+            // 6. Boolean variable
+            bool isStudent = false; // Truth-conditional value (true/false)
+            Console.WriteLine($"Is Student: {isStudent}");
 
-            // 7. Floating-Point number (float and double)
+            // 7. Floating-Point numbers (float and double)
             float height = 1.87f; // Floating-Point number with 'f' for Float
             double weight = 75.8; // Floating-Point number (higher precision)
-            Console.WriteLine($"Größe: {height:F2} Meter");
-            Console.WriteLine($"Gewicht: {weight:F1} kg");
+            Console.WriteLine($"Height: {height:F2} meters");
+            Console.WriteLine($"Weight: {weight:F1} kg");
 
             // Specialties for float: Rounding errors
             float floatCalc = 0.1f + 0.2f;
-            Console.WriteLine($"Float Rundung: 0.1 + 0.2 = {floatCalc} (Erwartung: 0.3)");
+            Console.WriteLine($"Float rounding: 0.1 + 0.2 = {floatCalc} (Expected: 0.3)");
 
             // Specialties for double: higher precision
             double doubleCalc = 0.1 + 0.2;
-            Console.WriteLine($"Double Präzision: 0.1 + 0.2 = {doubleCalc}");
+            Console.WriteLine($"Double precision: 0.1 + 0.2 = {doubleCalc}");
 
-            // 8. Typeconversion
-            Console.WriteLine("\n8. Typkonvertierungen:");
+            // 8. Type conversion
+            Console.WriteLine("\n8. Type Conversions:");
 
-            // a) implicit conversion (a.e. int to double)
+            // a) implicit conversion (e.g., int to double)
             double implicitConversion = age;
-            Console.WriteLine($"Implizite Konvertierung von int zu double: {implicitConversion}");
+            Console.WriteLine($"Implicit conversion from int to double: {implicitConversion}");
 
-            // b) explicit conversion (a.e. double to int)
+            // b) explicit conversion (e.g., double to int)
             int explicitConversion = (int)weight;
-            Console.WriteLine($"Explizite Konvertierung von double zu int (Gewicht): {explicitConversion}");
+            Console.WriteLine($"Explicit conversion from double to int (Weight): {explicitConversion}");
 
             // c) String to Number
             string strNumber = "42";
             int parsedNumber = int.Parse(strNumber);
-            Console.WriteLine($"String zu Zahl mit Parse: {parsedNumber}");
+            Console.WriteLine($"String to number with Parse: {parsedNumber}");
 
             // d) Number to String
             string numberAsString = age.ToString();
-            Console.WriteLine($"Zahl zu String mit ToString(): {numberAsString}");
+            Console.WriteLine($"Number to String with ToString(): {numberAsString}");
 
             // e) safe converting with TryParse
             string invalidNumber = "abc";
             if (int.TryParse(invalidNumber, out int result))
             {
-                Console.WriteLine($"Erfolgreich konvertiert: {result}");
+                Console.WriteLine($"Successfully converted: {result}");
             }
             else
             {
-                Console.WriteLine($"Fehler beim Konvertieren von '{invalidNumber}' zu int.");
+                Console.WriteLine($"Error converting '{invalidNumber}' to int.");
             }
 
-            // 9. formatting
-            Console.WriteLine("\n9. Formatierungen:");
+            // 9. Formatting
+            Console.WriteLine("\n9. Formatting:");
 
             // a) number formatting
             double price = 12345.6789;
-            Console.WriteLine($"Preis (Standard): {price}");
-            Console.WriteLine($"Preis (2 Dezimalstellen): {price:F2}");
-            Console.WriteLine($"Preis (Währung): {price:C}");
+            Console.WriteLine($"Price (Standard): {price}");
+            Console.WriteLine($"Price (2 decimal places): {price:F2}");
+            Console.WriteLine($"Price (Currency): {price:C}");
 
             // b) Numbers with thousands delimiter
             int largeNumber = 1000000;
-            Console.WriteLine($"Große Zahl mit Tausendertrennzeichen: {largeNumber:N0}");
+            Console.WriteLine($"Large number with thousands separator: {largeNumber:N0}");
 
-            // c) date-formating
+            // c) date formatting
             DateTime today = DateTime.Now;
-            Console.WriteLine($"Aktuelles Datum (kurz): {today:d}");
-            Console.WriteLine($"Aktuelles Datum (lang): {today:D}");
-            Console.WriteLine($"Uhrzeit: {today:T}");
+            Console.WriteLine($"Current date (short): {today:d}");
+            Console.WriteLine($"Current date (long): {today:D}");
+            Console.WriteLine($"Time: {today:T}");
 
-            // 10. Working with Strings: Split, Join, Search, interpolated Strings
-            Console.WriteLine("\n10. Arbeiten mit Strings:");
+            // 10. Working with Strings: Split, Join, Search, Interpolated Strings
+            Console.WriteLine("\n10. Working with Strings:");
 
-            string sentence = "Das ist ein Beispiel für eine Zeichenkette.";
-            Console.WriteLine($"Originaler Satz: {sentence}");
+            string sentence = "This is an example of a string.";
+            Console.WriteLine($"Original sentence: {sentence}");
 
             // Split
             string[] words = sentence.Split(' ');
-            Console.WriteLine("Gesplittete Wörter:");
+            Console.WriteLine("Split words:");
             foreach (string word in words)
             {
                 Console.WriteLine(word);
@@ -113,21 +113,21 @@ namespace _1_Variablen
 
             // Join
             string joinedSentence = string.Join(", ", words);
-            Console.WriteLine($"Wieder zusammengesetzt (mit Komma): {joinedSentence}");
+            Console.WriteLine($"Rejoined (with comma): {joinedSentence}");
 
             // Search
-            string searchWord = "Beispiel";
+            string searchWord = "example";
             Console.WriteLine(sentence.Contains(searchWord)
-                ? $"Das Wort '{searchWord}' wurde gefunden."
-                : $"Das Wort '{searchWord}' wurde nicht gefunden.");
+                ? $"The word '{searchWord}' was found."
+                : $"The word '{searchWord}' was not found.");
 
-            // interpolated Strings
+            // Interpolated strings
             int apples = 5;
             int bananas = 3;
-            Console.WriteLine($"Ich habe {apples} Äpfel und {bananas} Bananen. Insgesamt: {apples + bananas} Früchte.");
+            Console.WriteLine($"I have {apples} apples and {bananas} bananas. In total: {apples + bananas} fruits.");
 
             // Finish
-            Console.WriteLine("\nProgramm beendet.");
+            Console.WriteLine("\nProgram finished.");
         }
     }
 }

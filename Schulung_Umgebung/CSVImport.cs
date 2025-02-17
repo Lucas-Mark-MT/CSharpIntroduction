@@ -8,48 +8,39 @@ namespace Schulung_Umgebung
 {
     public class CSVImport
     {
-        
-        
-          private readonly string _filePath;
+        private readonly string _filePath;
 
-        public CSVImport(string filePath) //Constructor with passing parameters, this way we can save passing parameters in the ReadCsv() method. Alternatively, the constructor can be deleted, and ReadCsv can hold the filePath. This approach is preferred for extensions, such as WriteCsv, following the DRY principle (Don't Repeat Yourself).
+        // Constructor with a parameter to accept the file path and store it
+        public CSVImport(string filePath)
         {
             _filePath = filePath;
         }
 
-        public List<string[]> ReadCsv() //Alternatively, the filePath can be passed as a parameter here. See line 15.
+        // Method to read data from a CSV file and return it as a list of string arrays
+        public List<string[]> ReadCsv()
         {
             var rows = new List<string[]>();
 
+            // Check if the file exists, throw an exception if not
             if (!File.Exists(_filePath))
-                throw new FileNotFoundException("CSV file not found."); //If the file does not exist (!= 'Not'), an exception is thrown to prevent the program from crashing.
+                throw new FileNotFoundException("CSV file not found.");
 
             try
             {
-                foreach (string line in File.ReadLines(_filePath)) 
+                // Read each line from the file and split it by commas to separate the fields
+                foreach (string line in File.ReadLines(_filePath))
                 {
-                   
-                    string[] fields = line.Split(','); //Here, the character can be changed to adjust the delimiter.
+                    string[] fields = line.Split(','); // Adjust the delimiter if needed
                     rows.Add(fields);
                 }
-
-
-                /* string[] lines = File.ReadLines(_filePath).ToArray();
-
-                for (int i = 0; i < lines.Length; i++)
-                {
-                    string line = lines[i];
-                    string[] fields = line.Split(','); // Here, the character can be changed to adjust the delimiter.
-                    rows.Add(fields); 
-                } */
             }
             catch (Exception ex)
             {
+                // Throw an exception with the error message if something goes wrong during the file read
                 throw new Exception($"Error reading the file: {ex.Message}");
             }
 
-            return rows;
+            return rows; // Return the rows read from the CSV file
         }
     }
-    
 }

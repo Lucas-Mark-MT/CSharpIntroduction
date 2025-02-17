@@ -1,4 +1,4 @@
-﻿namespace _3_List
+﻿namespace _5_List
 {
     internal class Program
     {
@@ -6,61 +6,61 @@
         {
             // 1. Creation of a List
             List<string> names = new List<string> { "Lucas", "Tom", "Thomas" };
-            Console.WriteLine("1. Ursprungsliste:");
+            Console.WriteLine("1. Original list:");
             PrintList(names);
 
-            // 2. Adding an Element
+            // 2. Adding an element
             names.Add("Alois");
-            Console.WriteLine("\n2. Nach Hinzufügen eines Elements (Alois):");
+            Console.WriteLine("\n2. After adding an element (Alois):");
             PrintList(names);
 
-            // 3. Removal of an Element
+            // 3. Removal of an element
             names.Remove("Lucas");
-            Console.WriteLine("\n3. Nach Entfernen eines Elements (Lucas):");
+            Console.WriteLine("\n3. After removing an element (Lucas):");
             PrintList(names);
 
-            // 4. Access of an element via Index 
-            Console.WriteLine("\n4. Zugriff auf ein Element per Index:");
-            Console.WriteLine($"Das erste Element ist: {names[0]}");
+            // 4. Accessing an element via index 
+            Console.WriteLine("\n4. Accessing an element by index:");
+            Console.WriteLine($"The first element is: {names[0]}");
 
             // 5. Checking if an element exists 
-            Console.WriteLine("\n5. Überprüfung, ob ein Element existiert:");
+            Console.WriteLine("\n5. Checking if an element exists:");
             string searchName = "Andy";
             if (names.Contains(searchName))
             {
-                Console.WriteLine($"{searchName} ist in der Liste.");
+                Console.WriteLine($"{searchName} is in the list.");
             }
             else
             {
-                Console.WriteLine($"{searchName} ist nicht in der Liste.");
+                Console.WriteLine($"{searchName} is not in the list.");
             }
 
             // 6. Adding an element at a specific position 
             names.Insert(1, "Frank");
-            Console.WriteLine("\n6. Nach Einfügen eines Elements (Frank) an Position 1:");
+            Console.WriteLine("\n6. After inserting an element (Frank) at position 1:");
             PrintList(names);
 
-            // 7. sorting the list
+            // 7. Sorting the list
             names.Sort();
-            Console.WriteLine("\n7. Nach Sortieren der Liste:");
+            Console.WriteLine("\n7. After sorting the list:");
             PrintList(names);
 
-            // 8. reverse the list 
+            // 8. Reversing the list 
             names.Reverse();
-            Console.WriteLine("\n8. Nach Umkehren der Liste:");
+            Console.WriteLine("\n8. After reversing the list:");
             PrintList(names);
 
-            // 9. list with numbers (generic list)
+            // 9. List with numbers (generic list)
             List<int> numbers = new List<int> { 5, 3, 8, 1, 2 };
-            Console.WriteLine("\n9. Zahlenliste vor Sortieren:");
+            Console.WriteLine("\n9. Number list before sorting:");
             PrintList(numbers);
 
             numbers.Sort();
-            Console.WriteLine("Zahlenliste nach Sortieren:");
+            Console.WriteLine("Number list after sorting:");
             PrintList(numbers);
 
             // 10. Iterating through the list with foreach 
-            Console.WriteLine("\n10. Iteration über die Liste mit foreach:");
+            Console.WriteLine("\n10. Iterating through the list with foreach:");
             foreach (var name in names)
             {
                 Console.WriteLine($"Name: {name}");

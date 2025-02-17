@@ -4,40 +4,39 @@
     {
         static void Main(string[] args)
         {
-            // 1. simple if-condition
+            // 1. Simple if-condition
             int number = 10;
             if (number > 5)
             {
-                Console.WriteLine("1. Die Zahl ist größer als 5.");
+                Console.WriteLine("1. The number is greater than 5.");
             }
 
-            // 2. if-else-condition
-            if (number % 2 == 0) //The percent sign, also known as modulo, divides all numbers by 2 in this case. If the remainder is 0, the number is logically even.
+            // 2. If-else condition
+            if (number % 2 == 0) // The percent sign, also known as modulo, divides all numbers by 2 in this case. If the remainder is 0, the number is logically even.
             {
-                Console.WriteLine("2. Die Zahl ist gerade.");
+                Console.WriteLine("2. The number is even.");
             }
             else
             {
-                Console.WriteLine("2. Die Zahl ist ungerade.");
+                Console.WriteLine("2. The number is odd.");
             }
 
-            // 3. else-if-condition
+            // 3. Else-if condition
             string name = "Lucas";
-            if (name == "Tom") // 1 "=" is an Assinging- , 2 "==" is a Comparisonoperator
-
+            if (name == "Tom") // 1 "=" is an assignment operator, 2 "==" is a comparison operator
             {
-                Console.WriteLine("3. Hallo Tom!");
+                Console.WriteLine("3. Hello Tom!");
             }
             else if (name == "Lucas")
             {
-                Console.WriteLine("3. Hallo Lucas!");
+                Console.WriteLine("3. Hello Lucas!");
             }
             else
             {
-                Console.WriteLine("3. Ich kenne deinen Namen nicht.");
+                Console.WriteLine("3. I don't know your name.");
             }
 
-            // 4. jagged if-condition
+            // 4. Nested if-condition
             int age = 24;
             bool hasPermission = true;
 
@@ -45,44 +44,43 @@
             {
                 if (hasPermission)
                 {
-                    Console.WriteLine("4. Du bist volljährig und hast eine Erlaubnis.");
+                    Console.WriteLine("4. You are an adult and have permission.");
                 }
                 else
                 {
-                    Console.WriteLine("4. Du bist volljährig, aber hast keine Erlaubnis.");
+                    Console.WriteLine("4. You are an adult but do not have permission.");
                 }
             }
             else
             {
-                Console.WriteLine("4. Du bist minderjährig.");
+                Console.WriteLine("4. You are a minor.");
             }
 
-            // 5. inlined if-condition (ternary operator)
+            // 5. Inline if-condition (ternary operator)
             bool isLoggedIn = false;
-            Console.WriteLine(isLoggedIn ? "5. Willkommen zurück!" : "5. Bitte melde dich an.");
+            Console.WriteLine(isLoggedIn ? "5. Welcome back!" : "5. Please log in.");
 
-            // 6. multiple conditions with logical operators
+            // 6. Multiple conditions with logical operators
             int temperature = 25;
             if (temperature > 15 && temperature < 30)
             {
-                Console.WriteLine("6. Das Wetter ist angenehm.");
+                Console.WriteLine("6. The weather is pleasant.");
             }
             else if (temperature <= 15)
             {
-                Console.WriteLine("6. Es ist ziemlich kalt.");
+                Console.WriteLine("6. It is quite cold.");
             }
             else
             {
-                Console.WriteLine("6. Es ist ziemlich heiß.");
+                Console.WriteLine("6. It is quite hot.");
             }
 
             // 7. Negation in a condition
             bool hasAccess = false;
             if (!hasAccess)
             {
-                Console.WriteLine("7. Zugriff verweigert.");
+                Console.WriteLine("7. Access denied.");
             }
         }
     }
 }
-

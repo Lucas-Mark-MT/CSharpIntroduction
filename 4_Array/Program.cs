@@ -4,44 +4,42 @@
     {
         static void Main(string[] args)
         {
-          
-            
-            // 1. Creation and initialisation of an array
+            // 1. Creation and initialization of an array
             int[] numbers = { 10, 20, 30, 40, 50 };
-            Console.WriteLine("1. Ursprüngliches Array:");
+            Console.WriteLine("1. Original array:");
             PrintArray(numbers);
 
-            // 2.Access of an element through indexing
-            Console.WriteLine("\n2. Zugriff auf Elemente:");
-            Console.WriteLine($"Das erste Element ist: {numbers[0]}");
-            Console.WriteLine($"Das letzte Element ist: {numbers[numbers.Length - 1]}");
+            // 2. Accessing an element through indexing
+            Console.WriteLine("\n2. Accessing elements:");
+            Console.WriteLine($"The first element is: {numbers[0]}");
+            Console.WriteLine($"The last element is: {numbers[numbers.Length - 1]}");
 
-            // 3. Changing of an element
-            numbers[2] = 99; // Set the third element to 99 (always remember: Arrays are 0-indexed)
-            Console.WriteLine("\n3. Nach Änderung eines Elements (3. Element = 99):");
+            // 3. Changing an element
+            numbers[2] = 99; // Set the third element to 99 (always remember: arrays are 0-indexed)
+            Console.WriteLine("\n3. After modifying an element (3rd element = 99):");
             PrintArray(numbers);
 
-            // 4. Iteration through an array with a for-loop 
-            Console.WriteLine("\n4. Iteration mit einer for-Schleife:");
+            // 4. Iterating through an array with a for-loop
+            Console.WriteLine("\n4. Iteration with a for-loop:");
             for (int i = 0; i < numbers.Length; i++)
             {
                 Console.WriteLine($"Index {i}: {numbers[i]}");
             }
 
-            // 5. Iteration through an array with foreach
-            Console.WriteLine("\n5. Iteration mit foreach:");
+            // 5. Iterating through an array with foreach
+            Console.WriteLine("\n5. Iteration with foreach:");
             foreach (int number in numbers)
             {
-                Console.WriteLine($"Wert: {number}");
+                Console.WriteLine($"Value: {number}");
             }
 
-            // 6. multidimensional Array
+            // 6. Multidimensional array
             int[,] matrix = {
-            { 1, 2, 3 },
-            { 4, 5, 6 },
-            { 7, 8, 9 }
-        };
-            Console.WriteLine("\n6. Mehrdimensionales Array (Matrix):");
+                { 1, 2, 3 },
+                { 4, 5, 6 },
+                { 7, 8, 9 }
+            };
+            Console.WriteLine("\n6. Multidimensional array (Matrix):");
             for (int row = 0; row < matrix.GetLength(0); row++)
             {
                 for (int col = 0; col < matrix.GetLength(1); col++)
@@ -51,19 +49,19 @@
                 Console.WriteLine();
             }
 
-            // 7. Array with Strings
+            // 7. Array with strings
             string[] names = { "Tom", "Lucas", "Thomas" };
-            Console.WriteLine("\n7. Array mit Strings:");
+            Console.WriteLine("\n7. Array with strings:");
             PrintArray(names);
 
-            // 8. Array-methods(sorting)
+            // 8. Array methods (sorting)
             Array.Sort(numbers);
-            Console.WriteLine("\n8. Array sortiert:");
+            Console.WriteLine("\n8. Sorted array:");
             PrintArray(numbers);
 
-            // 9. Array-length
-            Console.WriteLine("\n9. Länge des Arrays:");
-            Console.WriteLine($"Das Array enthält {numbers.Length} Elemente.");
+            // 9. Array length
+            Console.WriteLine("\n9. Length of the array:");
+            Console.WriteLine($"The array contains {numbers.Length} elements.");
 
             var intarr = new int[5];
             const int BufferSize = 5;
@@ -74,13 +72,10 @@
             }
         }
 
-        // Helpermethod to print arrays 
+        // Helper method to print arrays 
         static void PrintArray<T>(T[] array)
         {
             Console.WriteLine("[ " + string.Join(", ", array) + " ]");
         }
-
-        
     }
 }
-

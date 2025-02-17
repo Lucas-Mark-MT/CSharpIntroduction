@@ -4,55 +4,55 @@
     {
         static void Main(string[] args)
         {
-            // 1. Erstellung eines IEnumerable mit einer Liste
+            // 1. Creating an IEnumerable with a List
             IEnumerable<int> numbers = new List<int> { 10, 20, 30, 40, 50 };
-            Console.WriteLine("1. IEnumerable basierend auf einer Liste:");
+            Console.WriteLine("1. IEnumerable based on a List:");
             PrintEnumerable(numbers);
 
-            // 2. Erstellung eines IEnumerable mit einem Array
+            // 2. Creating an IEnumerable with an Array
             IEnumerable<string> names = new string[] { "Lucas", "Tom", "Thomas" };
-            Console.WriteLine("\n2. IEnumerable basierend auf einem Array:");
+            Console.WriteLine("\n2. IEnumerable based on an Array:");
             PrintEnumerable(names);
 
-            // 3. Iteration über IEnumerable mit foreach
-            Console.WriteLine("\n3. Iteration über IEnumerable mit foreach:");
+            // 3. Iterating over IEnumerable with foreach
+            Console.WriteLine("\n3. Iterating over IEnumerable with foreach:");
             foreach (var number in numbers)
             {
-                Console.WriteLine($"Wert: {number}");
+                Console.WriteLine($"Value: {number}");
             }
 
-            // 4. Manuelle Iteration mit IEnumerator
-            Console.WriteLine("\n4. Manuelle Iteration mit IEnumerator:");
+            // 4. Manual Iteration with IEnumerator
+            Console.WriteLine("\n4. Manual Iteration with IEnumerator:");
             using (var enumerator = numbers.GetEnumerator())
             {
                 while (enumerator.MoveNext())
                 {
-                    Console.WriteLine($"Wert: {enumerator.Current}");
+                    Console.WriteLine($"Value: {enumerator.Current}");
                 }
             }
 
-            // 5. Filterung mit LINQ (ohne Bibliothek nur demonstrativ für IEnumerable)
-            Console.WriteLine("\n5. Filterung (manuell nach Werten größer als 20):");
+            // 5. Filtering with LINQ (manually filtering IEnumerable without LINQ)
+            Console.WriteLine("\n5. Filtering (manually filtering values greater than 20):");
             IEnumerable<int> filteredNumbers = FilterGreaterThan(numbers, 20);
             PrintEnumerable(filteredNumbers);
 
-            // 6. Lazy Evaluation mit einem Iterator (yield return)
-            Console.WriteLine("\n6. Lazy Evaluation (Iterator mit yield return):");
+            // 6. Lazy Evaluation with an Iterator (yield return)
+            Console.WriteLine("\n6. Lazy Evaluation (Iterator with yield return):");
             IEnumerable<int> lazyNumbers = LazyNumbers();
             foreach (var num in lazyNumbers)
             {
-                if (num > 3) break; // Demonstration der Lazy Evaluation
-                Console.WriteLine($"Wert: {num}");
+                if (num > 3) break; // Demonstrating Lazy Evaluation
+                Console.WriteLine($"Value: {num}");
             }
         }
 
-        // Hilfsmethode zum Drucken eines IEnumerable
+        // Helper method to print an IEnumerable
         static void PrintEnumerable<T>(IEnumerable<T> enumerable)
         {
             Console.WriteLine("[ " + string.Join(", ", enumerable) + " ]");
         }
 
-        // Filtermethode für IEnumerable (ohne LINQ)
+        // Filtering method for IEnumerable (without LINQ)
         static IEnumerable<int> FilterGreaterThan(IEnumerable<int> source, int threshold)
         {
             foreach (var item in source)
@@ -64,7 +64,7 @@
             }
         }
 
-        // Lazy Iterator mit yield return
+        // Lazy Iterator with yield return
         static IEnumerable<int> LazyNumbers()
         {
             yield return 1;
@@ -75,4 +75,3 @@
         }
     }
 }
-

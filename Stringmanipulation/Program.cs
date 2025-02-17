@@ -6,63 +6,63 @@ namespace StringManipulation
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("String-Manipulation in C#");
+            Console.WriteLine("String Manipulation in C#");
 
             // 1. Splitting Strings
-            string text = "Das ist ein Test. Hier kommt noch ein Satz.";
-            string[] satzteile = text.Split('.');
-            Console.WriteLine("\nGetrennte Sätze:");
-            foreach (var teil in satzteile)
+            string text = "This is a test. Here comes another sentence.";
+            string[] sentenceParts = text.Split('.');
+            Console.WriteLine("\nSeparated sentences:");
+            foreach (var part in sentenceParts)
             {
-                Console.WriteLine(teil.Trim());
+                Console.WriteLine(part.Trim());
             }
 
-            // 2. Join Strings
-            string[] worte = { "C#", "ist", "eine", "tolle", "Sprache" };
-            string zusammengefügt = string.Join(" ", worte);
-            Console.WriteLine($"\nZusammengefügter Satz: {zusammengefügt}");
+            // 2. Joining Strings
+            string[] words = { "C#", "is", "a", "great", "language" };
+            string joinedSentence = string.Join(" ", words);
+            Console.WriteLine($"\nJoined sentence: {joinedSentence}");
 
-            // 3. Search chain of chars
-            string suchwort = "tolle";
-            if (zusammengefügt.Contains(suchwort))
+            // 3. Searching for a sequence of characters
+            string searchWord = "great";
+            if (joinedSentence.Contains(searchWord))
             {
-                Console.WriteLine($"\nDas Wort '{suchwort}' wurde gefunden!");
+                Console.WriteLine($"\nThe word '{searchWord}' was found!");
             }
             else
             {
-                Console.WriteLine($"\nDas Wort '{suchwort}' wurde nicht gefunden.");
+                Console.WriteLine($"\nThe word '{searchWord}' was not found.");
             }
 
-            // 4. Search and replace chars
-            string rawText = "C# ist super!!!";
-            string cleanText = rawText.Replace("!!!", "").Replace("super", "fantastisch");
-            Console.WriteLine($"\nBereinigter Text: {cleanText}");
+            // 4. Search and replace characters
+            string rawText = "C# is awesome!!!";
+            string cleanText = rawText.Replace("!!!", "").Replace("awesome", "fantastic");
+            Console.WriteLine($"\nCleaned text: {cleanText}");
 
             // 5. String analysis (length, starts with, ends with)
-            Console.WriteLine($"\nLänge des Textes: {cleanText.Length}");
-            Console.WriteLine(cleanText.StartsWith("C#") ? "Der Text beginnt mit 'C#'." : "Der Text beginnt nicht mit 'C#'.");
-            Console.WriteLine(cleanText.EndsWith("tisch") ? "Der Text endet mit 'tisch'." : "Der Text endet nicht mit 'tisch'.");
+            Console.WriteLine($"\nLength of the text: {cleanText.Length}");
+            Console.WriteLine(cleanText.StartsWith("C#", StringComparison.OrdinalIgnoreCase) ? "The text starts with 'C#'." : "The text does not start with 'C#'.");
+            Console.WriteLine(cleanText.EndsWith("tic") ? "The text ends with 'tic'." : "The text does not end with 'tic'.");
 
-            // 6. filtering words from a sentence
-            string[] langeWorte = zusammengefügt.Split(' ');
-            var gefilterteWorte = Array.FindAll(langeWorte, w => w.Length > 3);
-            Console.WriteLine("\nWörter mit mehr als 3 Buchstaben:");
-            foreach (var wort in gefilterteWorte)
+            // 6. Filtering words from a sentence
+            string[] longWords = joinedSentence.Split(' ');
+            var filteredWords = Array.FindAll(longWords, w => w.Length > 3);
+            Console.WriteLine("\nWords with more than 3 letters:");
+            foreach (var word in filteredWords)
             {
-                Console.WriteLine(wort);
+                Console.WriteLine(word);
             }
 
             // 7. Substring and IndexOf
-            string langText = "Die Programmiersprache C# ist sehr leistungsstark.";
-            int index = langText.IndexOf("C#");
-            Console.WriteLine($"\n'C#' beginnt an Index {index}");
+            string longText = "The programming language C# is very powerful.";
+            int index = longText.IndexOf("C#");
+            Console.WriteLine($"\n'C#' starts at index {index}");
             if (index >= 0)
             {
-                string substring = langText.Substring(index, 2);
-                Console.WriteLine($"Substring extrahiert: {substring}");
+                string substring = longText.Substring(index, 2);
+                Console.WriteLine($"Extracted substring: {substring}");
             }
 
-            Console.WriteLine("\nProgramm beendet.");
+            Console.WriteLine("\nProgram finished.");
         }
     }
 }
