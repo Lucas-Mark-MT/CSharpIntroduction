@@ -1,2 +1,2 @@
 # CSharp Introduction for everyone new to OOP 
-Please note that currently the supported language is german with english comments. More languages to come
+This is the full english supported Version. For the Base Version in german with english comments please see master branch
