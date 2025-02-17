@@ -110,4 +110,18 @@
             }
 
             // 14. iterating with a yield
+            Console.WriteLine("\n14. Iterating with a `yield`:");
+            foreach (int number in GenerateNumbers())
+            {
+                Console.WriteLine(number);
+            }
+        }
 
+        static IEnumerable<int> GenerateNumbers()
+        {
+            yield return 1;
+            yield return 2;
+            yield return 3;
+        }
+    }
+}

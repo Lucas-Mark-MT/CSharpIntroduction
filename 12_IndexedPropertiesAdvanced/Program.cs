@@ -2,12 +2,9 @@
 {
     // CSVHandler.cs
     using System;
-    using System.IO;
 
     class CSVHandler
     {
-        private static string[] _headers; // Holds the column headers
-        private static string[][] _data; // Holds the CSV data as a 2D array
 
         // TODO: Dynamically handle varying delimiters in the CSV file (e.g., semicolons, tabs).
         public static void LoadCSV(string filePath)

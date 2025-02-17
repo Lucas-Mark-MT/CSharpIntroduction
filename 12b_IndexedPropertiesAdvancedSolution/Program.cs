@@ -1,5 +1,4 @@
 ﻿using System;
-using System.IO;
 
 namespace _12b_IndexedPropertiesAdvancedSolution
 {
