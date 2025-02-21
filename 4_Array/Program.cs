@@ -67,7 +67,7 @@
 
             var intarr = new int[5];
             const int BufferSize = 5;
-            for (int index = 0; index % BufferSize <= BufferSize; index += 1)
+            for (int index = 0; index < BufferSize;  index++)
             {
                 intarr[index % BufferSize] = 0;
                 Console.WriteLine(index % BufferSize);

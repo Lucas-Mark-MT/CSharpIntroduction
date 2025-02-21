@@ -108,21 +108,9 @@
                 if (number == 5) break;    // end loop
                 Console.WriteLine(number);
             }
-
-            // 14. iterating with a yield
-            Console.WriteLine("\n14. Iteration über ein `yield`:");
-            foreach (int number in GenerateNumbers())
-            {
-                Console.WriteLine(number);
-            }
+       
         }
 
-        static IEnumerable<int> GenerateNumbers()
-        {
-            yield return 1;
-            yield return 2;
-            yield return 3;
-        }
-    }
+      }
 }
 
