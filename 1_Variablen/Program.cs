@@ -1,5 +1,6 @@
 ﻿using System;
 
+
 namespace _1_Variables
 {
     internal class Program

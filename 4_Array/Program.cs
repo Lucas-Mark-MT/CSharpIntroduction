@@ -35,9 +35,10 @@
 
             // 6. Multidimensional array
             int[,] matrix = {
-                { 1, 2, 3 },
+                { 1, 2, 3},
                 { 4, 5, 6 },
-                { 7, 8, 9 }
+                { 7, 8, 9 },
+                { 9, 10, 11 }
             };
             Console.WriteLine("\n6. Multidimensional array (Matrix):");
             for (int row = 0; row < matrix.GetLength(0); row++)
@@ -65,11 +66,12 @@
 
             var intarr = new int[5];
             const int BufferSize = 5;
-            for (int index = 0; index % BufferSize <= BufferSize; index += 1)
+            for (int index = 0; index < BufferSize; index++)
             {
                 intarr[index % BufferSize] = 0;
                 Console.WriteLine(index % BufferSize);
             }
+
         }
 
         // Helper method to print arrays 

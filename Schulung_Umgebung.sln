@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "09_CSVRead", "Schulung_Umgebung\09_CSVRead.csproj", "{277B4FCB-1F3B-459A-BB26-6CA2A52BD69E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01_Variablen", "1_Variablen\01_Variablen.csproj", "{2CEE6A23-456F-4C4E-8AAE-FF792478D05A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9F0214F1-9236-46E9-88F5-B6212B3D4FEE} = {9F0214F1-9236-46E9-88F5-B6212B3D4FEE}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02_for_and_foreach", "2_for_and_foreach\02_for_and_foreach.csproj", "{58AAF587-E971-4FC3-A5E0-E4A266345DB1}"
 EndProject
